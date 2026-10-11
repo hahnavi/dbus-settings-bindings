@@ -4,4 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-zbus.workspace = true
+zbus = { workspace = true, default-features = false }
+
+[features]
+default = ["async-io"]
+async-io = ["zbus/async-io"]
+tokio = ["zbus/tokio"]
